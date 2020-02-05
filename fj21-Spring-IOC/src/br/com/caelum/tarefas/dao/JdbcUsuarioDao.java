@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import br.com.caelum.tarefas.ConnectionFactory;
 import br.com.caelum.tarefas.modelo.Usuario;
 
+
 public class JdbcUsuarioDao {
 	private Connection connection;
 
@@ -18,7 +19,6 @@ public class JdbcUsuarioDao {
 			throw new RuntimeException(e);
 		}
 	}
-
 	public boolean existeUsuario(Usuario usuario) {
 
 		if (usuario == null) {
