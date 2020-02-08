@@ -1,23 +1,28 @@
 package br.com.caelum.tarefas.controller;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import br.com.caelum.tarefas.dao.JdbcTarefaDao;
+import br.com.caelum.tarefas.dao.TarefaDao;
 import br.com.caelum.tarefas.modelo.Tarefa;
 
+@Transactional
 @Controller
 public class TarefaController {
 	
-	private final JdbcTarefaDao dao;
-	
+	//private final JdbcTarefaDao dao;
 	@Autowired
+	TarefaDao dao;
+	
+	/*@Autowired
 	public TarefaController(JdbcTarefaDao dao) {
 		this.dao = dao;
-	}
+	}*/
 
 	@RequestMapping("novaTarefa")
 	public String form() {
